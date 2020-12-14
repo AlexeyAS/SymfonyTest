@@ -1,0 +1,40 @@
+main:
+    path: /
+    controller: App\Controller\PostingController::lastMessage
+homepage:
+    path: /home
+    controller: App\Controller\PostingController::login
+about:
+    path: /about
+    controller: App\Controller\PostingController::about
+posting-new:
+    path: /posting-new
+    controller: App\Controller\PostingController::postingNew
+posting-form:
+    path: /posting/submit
+    controller: App\Controller\PostingController::submit
+postings:
+    path: /postings
+    controller: App\Controller\PostingController::allPosts
+posting-data:
+    path: /posting/all
+    controller: App\Controller\PostingController::allData
+users:
+    path: /users
+    controller: App\Controller\UserController::allUsers
+posting-data-one:
+    path: /posting/all/{id}
+    controller: App\Controller\PostingController::showOneMessage
+posting-update:
+    path: /posting/all/{id}/update
+    controller: App\Controller\PostingController::updateMessage
+#posting-update-submit:
+#    path: /posting/all/{id}/update
+#    controller: App\Controller\PostingController::updateMessageSubmit
+#    methods: POST
+posting-delete:
+    path: /posting/all/{id}/delete
+    controller: App\Controller\PostingController::deleteMessage
+send:
+    path: /send
+    controller: App\Controller\MailController::index

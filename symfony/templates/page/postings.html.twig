@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Сообщения всех пользователей
+{% endblock %}
+
+{% block content %}
+<h1 style="text-align: center">Сообщения всех пользователей</h1>
+
+    {{ form_start(searchForm) }}
+
+    {{ form_row(searchForm.name, { label: 'Search by name', errors: false, attr: { placeholder: 'Поиск' }}) }}
+    {{ form_row(searchForm.text, { label: 'Search by text', errors: false, attr: { placeholder: 'Поиск' }}) }}
+
+    <button type="submit" class="btn btn-primary">Ввод</button>
+    {{ form_end(searchForm) }}
+    {{ errorsForm }}
+
+<br>
+
+{% for posting in postings %}
+
+<div class="alert alert-info">
+
+    <h3>{{ posting.subject }}</h3>
+    <p style="font-size: 16px; font-weight: bold;">{{ posting.message }}</p>
+    <br>
+    <small>{{ posting.createdAt}} | {{ posting.updatedAt}}</small>
+    <br>
+    <small>{{posting.name}}</small>
+    <br>
+    <small>{{posting.email}}</small>
+</div>
+{%  endfor %}
+
+{% endblock %}

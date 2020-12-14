@@ -1,0 +1,24 @@
+<div class="jumbotron">
+    <div class="container">
+        <h1>Последние посты</h1>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                {% for element in data %}
+                {% if ( loop.index == 1) %}
+                <div class="carousel-item active">
+                    <h6>{{element.name}}</h6>
+                    <h5>{{element.message}}</h5>
+                    <p>{{element.createdAt}}</p>
+                </div>
+                {% else %}
+                <div class="carousel-item">
+                    <h6>{{element.name}}</h6>
+                    <h5>{{element.message}}</h5>
+                    <p>{{element.createdAt}}</p>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

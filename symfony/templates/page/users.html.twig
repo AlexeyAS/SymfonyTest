@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Список всех пользователей
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+        {{ form_start(searchForm) }}
+
+        {{ form_row(searchForm.name, { label: 'Search by name', errors: false, attr: { placeholder: 'Поиск' }}) }}
+        {{ form_row(searchForm.email, { label: 'Search by email', errors: false, attr: { placeholder: 'Поиск' }}) }}
+
+        <button type="submit" class="btn btn-primary">Ввод</button>
+        {{ form_end(searchForm) }}
+        {{ errorsForm }}
+
+            <hr>
+
+            <div>
+
+        <h2>
+            Users
+        </h2>
+        <table class="table table-striped table-dark">
+            <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Кол-во Постов</th>
+                <th scope="col">Последний Пост</th>
+
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for user in pagination %}
+                <tr>
+                    <td></td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{postings[user.name]['count']}}</td>
+                    <td>{{postings[user.name]['createdAt']}}</td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+    </div>
+{% endblock %}

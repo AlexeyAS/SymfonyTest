@@ -1,0 +1,43 @@
+version: "3.3"
+services:
+  site:
+    depends_on:
+      - db
+    volumes:
+    # Win  - D:\path\SymfonyTest:/var/www/html
+    # Win  - D:\path\SymfonyTest\apache2:/etc/apache2/sites-enabled
+    # Win  - C:\tmp:/tmp
+    # UNIX - /path/SymfonyTest:/var/www/html
+    # UNIX - /path/SymfonyTest/apache2:/etc/apache2/sites-enabled
+    # UNIX - /tmp:/tmp
+    build: .
+    container_name: symfony
+    ports:
+      - 80:80
+    links:
+      - db
+    restart: always
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+  db:
+    image: mysql:8.0
+    restart: always
+    container_name: db
+    command: --default-authentication-plugin=mysql_native_password --innodb-use-native-aio=0
+    ports:
+      - 3306:3306
+    volumes:
+    # Win  - D:\path\SymfonyTest\mysql:/var/lib/mysql
+    # UNIX - /path/SymfonyTest/mysql:/var/lib/mysql
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: test
+      MYSQL_ROOT_PASSWORD: root
+
+
+
+

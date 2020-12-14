@@ -1,0 +1,43 @@
+body {
+  background: lightgrey;
+}
+textarea {
+  min-height: 150px;
+}
+
+.aside {
+  text-align: center;
+  text-transform: uppercase;
+}
+.aside .about{
+  display: block;
+  width: 130px;
+  margin: 50px auto 30px;
+}
+.carousel-item h5{
+  height: 40px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.search .btn{
+  display: block;
+  text-align: center;
+}
+
+.active .page-link{
+  background-color: rgb(69, 77, 85)!important;
+  border-color: rgb(69, 77, 85)!important;
+}
+.page-link{
+  background-color: #fff;
+  border: 1px solid #dee2e6!important;
+}
+/* Form Error Hax */
+.form-error-icon{
+  display: none;
+}
+.form-error-message {
+  color: #761b18;
+  font-size: 0.9rem;
+  font-weight: 400;
+}

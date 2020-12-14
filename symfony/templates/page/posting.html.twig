@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}
+Сообщения пользователя
+{% endblock %}
+
+{% block content %}
+<h1>Сообщения пользователя</h1>
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% for element in data %}
+
+<div class="alert alert-info">
+    <p>{{element.name}}</p>
+    <h3>{{ element.subject }}</h3>
+    <p><small>{{ element.createdAt}}</small></p>
+    <a href="{{ path('posting-data-one', {id:element.id}) }}"><button class="btn btn-warning">Детали</button></a>
+</div>
+{% endfor %}
+{% endblock %}

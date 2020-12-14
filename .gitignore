@@ -1,0 +1,16 @@
+/.idea
+Readme.txt
+docker-compose.yaml
+###> symfony/framework-bundle ###
+/symfony/.env
+/symfony/.env.local
+/symfony/.env.local.php
+/symfony/.env.*.local
+/symfony/config/secrets/prod/prod.decrypt.private.php
+/symfony/public/bundles/
+/symfony/var/
+/symfony/vendor/
+/symfony/node_modules/
+###< symfony/framework-bundle ###
+
+

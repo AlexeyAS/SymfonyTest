@@ -1,0 +1,25 @@
+body {
+    background: lightgrey;
+}
+textarea {
+    min-height: 150px;
+}
+
+.aside {
+    text-align: center;
+    text-transform: uppercase;
+}
+.aside .about{
+    display: block;
+    width: 130px;
+    margin: 50px auto 30px;
+}
+.carousel-item h5{
+    height: 40px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.search .btn{
+    display: block;
+    text-align: center;
+}

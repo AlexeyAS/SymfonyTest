@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Обновление Поста
+{% endblock %}
+
+{% block content %}
+<h1>Обновление Поста</h1>
+
+    {{ form_start(postingForm) }}
+    {{ form_row(postingForm.subject, { label: 'Введите тему', errors: false, attr: { placeholder: 'Тема' }}) }}
+    {{ form_row(postingForm.message, { label: 'Сообщение', name: 'message', errors: false, attr: { placeholder: 'Сообщение' }}) }}
+
+    <button type="submit" class="btn btn-success">Ввод</button>
+    {{ form_end(postingForm) }}
+
+    {{ errorsForm }}
+
+{% endblock %}

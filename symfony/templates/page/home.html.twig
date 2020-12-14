@@ -1,0 +1,23 @@
+{% extends 'page/main.html.twig' %}
+
+{% block content %}
+<div class="container mb-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+
+                <div class="card-body mx-auto">
+                    {% if app.session.get('status') %}
+                    <div class="alert alert-success centered" role="alert">
+                        {{ app.session.get('status') }}
+                    </div>
+                    {%  endif %}
+
+                    {{ 'You are logged in!' }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ parent() }}
+{% endblock %}

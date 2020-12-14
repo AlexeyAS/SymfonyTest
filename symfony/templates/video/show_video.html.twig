@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <h1>Показать видео</h1>
+    <table>
+    <tbody>
+    {% for video in videos %}
+
+            <tr>
+                <td><h1><a href="{{ path('show_video', {'youtube_id' : video.youtubeId}) }}">{{ video.title }}</a></h1></td>
+                <td><h3 style="text-align: center;">{{ video.category.title }}</h3></td>
+                <td><iframe width="560" height="315" src="https://www.youtube.com/embed/{{ video.youtubeId }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+            </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}
